@@ -1,1 +1,1 @@
-Demo at [https://quirijndubois.github.io/beursborrel/demo/]
+Demo at https://quirijndubois.github.io/beursborrel/demo/
