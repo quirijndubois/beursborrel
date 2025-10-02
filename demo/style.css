@@ -1,0 +1,49 @@
+        /* Define custom font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark gray background (bg-gray-900) */
+            color: #f9fafb; /* Default light text (text-gray-50) */
+            /* Increased padding-top to give space below the new, taller fixed ticker */
+            padding-top: 4rem; 
+        }
+        
+        /* Custom styling for the chart container */
+        .chart-container {
+            /* REMOVED max-width: 900px; to allow full width */
+            width: 100%; 
+            margin: 0 auto;
+            background-color: #1f2937; /* Slightly lighter dark card (bg-gray-800) */
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4), 0 4px 10px -2px rgba(0, 0, 0, 0.2);
+            border-radius: 1rem; /* Rounded corners */
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #374151; /* Subtle border for definition */
+            
+            /* CALCULATED HEIGHT TO FILL SCREEN MINUS TICKET AND BODY PADDING/MARGINS */
+            min-height: calc(100vh - 8rem); 
+        }
+
+        /* Ticker styling for smooth horizontal flow */
+        .ticker-container {
+            overflow: hidden;
+            width: 100%;
+            height: 60px; /* Increased height from 40px to 60px */
+            background-color: #0d0d0d; /* Even darker for the ticker bar */
+        }
+        #stockTicker {
+            display: inline-flex;
+            width: max-content;
+            animation: scroll-left linear infinite;
+        }
+        /* Define the scrolling animation */
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            /* Adjusted to 25% because we duplicate the content 4x in JS for robustness */
+            100% { transform: translateX(-25%); } 
+        }
+        /* Add transition for the fade effect on stock switch */
+        #chartWrapper {
+            transition: opacity 0.3s ease-in-out; 
+        }
